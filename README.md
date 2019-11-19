@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/tonvanbart/spring-ldap-example.svg?token=m6sYUWpdsZjJBPpPVpoi&branch=master)](https://travis-ci.com/tonvanbart/spring-ldap-example)
+
 ## Spring LDAP login example
 
 This project shows:
