@@ -23,7 +23,7 @@ retrieved from the LDAP.
 
 ### Moving parts, bind login verification
 The setup works as follows: the Spring Boot plugin configuration in `pom.xml` activates a profile `embedldap`. 
-This causes the properties for that profile `application-embedldap` to be read in addition to the normal `application.properties`.
+This causes the properties for that profile `application-embedldap.properties` to be read in addition to the normal `application.properties`.
 The profile application properties create an embedded LDAP server, tell it to initialize from `test-schema.ldif`
 and override the configuration of `ldap.url` to point to the embedded server.
 
@@ -38,5 +38,6 @@ as can be seen in the output page.
 add an argument of type `Principal` to your controller method, which will be populated by Spring.
 
 In one of our projects this setup was quite helpful as it was not possible to connect to the cluster LDAP
-from our development machines.
+from our development machines. If you make `test-schema.ldif` reflect your company LDAP tree then you can verify
+your login and roles setup locally.
 
