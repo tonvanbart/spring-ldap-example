@@ -1,0 +1,68 @@
+# Test data, TODO try to follow actual LDAP structure (user and group base DN's)
+# NOTE: non-standard LDAP entries have been commented out to enable the embedded server to run
+
+dn: dc=tonvanbart
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: kpn
+
+# Organizational Units
+dn: ou=groups,dc=tonvanbart
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=tonvanbart
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+# Groups
+dn: cn=example_group1,ou=groups,dc=tonvanbart
+cn: example_group1
+objectClass: groupOfNames
+objectClass: top
+description: blabblabla
+member: cn=bartt,ou=People,dc=tonvanbart
+
+dn: cn=example_group2,ou=groups,dc=tonvanbart
+cn: example_group2
+objectClass: groupOfNames
+objectClass: top
+description: Kafka administrator group
+member: cn=bartt,ou=People,dc=tonvanbart
+member: cn=singhs,ou=People,dc=tonvanbart
+
+# People
+dn: cn=bartt,ou=people,dc=tonvanbart
+cn: bartt
+objectclass: inetOrgPerson
+objectclass: inetUser
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+sn: Bart
+displayName: Bart, Ton van
+givenName: Ton
+uid: bartt
+title: directory wrangler
+memberOf: cn=example_group1,ou=groups,dc=tonvanbart
+memberOf: cn=example_group2,ou=groups,dc=tonvanbart
+userPassword: test
+
+dn: cn=singhs,ou=people,dc=tonvanbart
+cn: singhs
+objectclass: inetOrgPerson
+objectclass: inetUser
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+sn: Bart
+displayName: Singh, mr
+givenName: Singh
+uid: singhs
+title: drop wizard and code wrestler
+memberOf: cn=example_group1,ou=groups,dc=tonvanbart
+memberOf: cn=example_group2,ou=groups,dc=tonvanbart
+userPassword: test
