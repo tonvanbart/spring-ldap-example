@@ -41,3 +41,7 @@ In one of our projects this setup was quite helpful as it was not possible to co
 from our development machines. If you make `test-schema.ldif` reflect your company LDAP tree then you can verify
 your login and roles setup locally.
 
+### License
+This project is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+
+
